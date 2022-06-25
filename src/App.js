@@ -20,19 +20,28 @@ export default function App() {
   };
   const mapearPersonagem = (personagem) => <li>{personagem}</li>;
 
-  const onClickHandler = (event) => {
+  const onClickBaker = (event) => {
     setPesquisa(event.target.value);
+  };
+
+  const onClickHandleRedfield = (event) => {
+    setPesquisa("Redfield");
+  };
+  const onClickHandleBaker = (event) => {
+    setPesquisa("Baker");
   };
   return (
     <div>
       <h3>Personagens de Resident Evil</h3>
-      <input onChange={onClickHandler} />
+      <button onClick={onClickHandleRedfield}>Redfield</button>
+      <button onClick={onClickBaker}>Baker</button>
       <ul> {personagens.filter(filteredPersonagem).map(mapearPersonagem)} </ul>
     </div>
   );
 }
 const App2 = () => {
   const [numero, setNumero] = useState(0);
+  const [pesquisaRedfield, setPesquisaRedfield] = useState();
   const incrementoCallback = () => {
     setNumero(numero + 1);
     localStorage.setItem("numero", numero);
@@ -40,8 +49,12 @@ const App2 = () => {
   console.log("App2 executado");
   return (
     <div>
-      <p>Numero de vezes clicado: {numero}</p>
+      <p>Numero de vezes clicado:{numero}</p>
       <button onClick={incrementoCallback}>Incremento</button>
     </div>
   );
 };
+//Considere o component Personagens declarado abaixo.
+//Você deve criar dois botões, um para que sejam listados todos os personagens
+//que são da família Redfield e um botão para que
+//sejam listados todos os personagens da família Baker.
