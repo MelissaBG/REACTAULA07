@@ -20,7 +20,7 @@ export default function App() {
   };
   const mapearPersonagem = (personagem) => <li>{personagem}</li>;
 
-  const onClickHandler = (Event) => {
+  const onClickHandler = (event) => {
     setPesquisa(event.target.value);
   };
   return (
@@ -32,7 +32,7 @@ export default function App() {
   );
 }
 const App2 = () => {
-  const [numero, setNumero] = useState();
+  const [numero, setNumero] = useState(0);
   const incrementoCallback = () => {
     setNumero(numero + 1);
     localStorage.setItem("numero", numero);
@@ -45,5 +45,3 @@ const App2 = () => {
     </div>
   );
 };
-
-export default App();
