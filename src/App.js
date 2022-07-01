@@ -12,10 +12,16 @@ export default function App() {
     "Ada Wong",
     "Chris Redfield",
     "Leon S. Kennedy",
-    "Albert Wesker"
+    "Albert Wesker",
+    "Lucas Baker"
   ];
+
   const filteredPersonagem = (personagem) => {
     const familiaUpper = pesquisa.toUpperCase();
+    const filtrar = personagem.toUpperCase().includes(familiaUpper);
+
+    console.log(familiaUpper);
+    console.log(personagem);
     return personagem.toUpperCase().includes(familiaUpper);
   };
   const mapearPersonagem = (personagem) => <li>{personagem}</li>;
@@ -34,8 +40,9 @@ export default function App() {
     <div>
       <h3>Personagens de Resident Evil</h3>
       <button onClick={onClickHandleRedfield}>Redfield</button>
-      <button onClick={onClickBaker}>Baker</button>
+      <button onClick={onClickHandleBaker}>Baker</button>
       <ul> {personagens.filter(filteredPersonagem).map(mapearPersonagem)} </ul>
+      <ul> {personagens.filter(filteredPersonagem)} </ul>
     </div>
   );
 }
